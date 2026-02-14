@@ -1,3 +1,4 @@
+package String;
 public class Merge_string_ {
     public static void main(String[] args) {
         String str1 = "abc";
