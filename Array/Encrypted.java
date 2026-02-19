@@ -26,7 +26,7 @@ class Encrypted {
         return sum;
     }
     public static void main(String[] args) {
-        int[] nums = {10, 21, 32};
+        int[] nums = {10, 21, 32}; // 11 + 22 + 33 = 66
         System.err.println(sumOfEncryptedInt(nums));
     }
 }
