@@ -11,18 +11,25 @@ public class MInFlips {
         for(int j = 0; j < 2 *n; j++){
             char expectedChar1 = (j % 2 == 0 ? '0' : '1');
             char expectedChar2 = (j % 2 == 0 ? '1' : '0');
+            if(s.charAt(j % n) != expectedChar1) flip1++;
+            if(s.charAt(j % n) != expectedChar2) flip2++;
 
             if(j - i + 1 > n){
-                if(s.charAt(j % n) != expectedChar1) flip1++;
-                if(s.charAt(j % n) != expectedChar2) flip2++; 
+                expectedChar1 = (i % 2 == 0 ? '0' : '1');
+                expectedChar2 = (i % 2 == 0 ? '1' : '0');
+                if(s.charAt(i % n) != expectedChar1) flip1--;
+                if(s.charAt(i % n) != expectedChar2) flip2--;
+                i++; 
             }
 
-            if(j - i - 1 == n){
-                
+            if(j - i + 1 == n){
+                result = Math.min(result, Math.min(flip1, flip2));
             }
         }
+        return result;
     }
     public static void main(String[] args) {
-        String s = "11100";
+        String s = "111000";
+        System.out.println(minFlip(s));
     }
 }
