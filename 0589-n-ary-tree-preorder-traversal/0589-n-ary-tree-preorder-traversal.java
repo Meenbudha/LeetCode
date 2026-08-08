@@ -18,18 +18,15 @@ class Node {
 */
 
 class Solution {
-    public List<Integer> preorder(Node root) {
-        List<Integer> ans = new ArrayList<>();
-        solve(ans, root);
-        return ans;
-    }
+    List<Integer> ans = new ArrayList<>();
 
-    private void solve(List<Integer> ls, Node root){
-        if(root == null) return;
-        ls.add(root.val);
+    public List<Integer> preorder(Node root) {
+        if(root == null) return ans;
+        ans.add(root.val);
 
         for(Node child : root.children){
-            solve(ls, child);
+            preorder(child);
         }
+        return ans;
     }
 }
