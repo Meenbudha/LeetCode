@@ -1,10 +1,6 @@
 # Write your MySQL query statement below
-delete from person 
-where id not in (
-    select id 
-    from (
-        select min(id) as id
-        from person 
-        group by email
-    ) as temp
-);
+delete p1
+from Person p1
+join Person p2
+on p1.email = p2.email
+and p1.id > p2.id;
