@@ -10,14 +10,14 @@ class Solution {
         Arrays.sort(sq);
 
         long score = 0;
-        int l = 0;
-        int r = n - 1;
-        for(int i = 0; i < n; i++){
-            if(i % 2 == 0){
-                score += sq[r--];
-            }else {
-                score -= sq[l++];
-            }
+        int mid = n / 2;
+
+        for(int i = 0; i < mid; i++){
+            score -= sq[i];
+        }
+
+        for(int i = mid; i < n; i++){
+            score += sq[i];
         }
         return score;
     }
