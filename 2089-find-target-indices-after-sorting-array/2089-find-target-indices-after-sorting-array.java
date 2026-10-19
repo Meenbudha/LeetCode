@@ -3,7 +3,8 @@ class Solution {
         List<Integer> ans = new ArrayList<>();
         int n = nums.length;
 
-        MergeSort(nums, 0, n-1);
+        // MergeSort(nums, 0, n-1);
+        Arrays.sort(nums);
 
         for(int i = 0; i < n; i++){
             if(nums[i] == target){
